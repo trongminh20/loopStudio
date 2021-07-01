@@ -1,0 +1,27 @@
+/*==============variables===========*/
+$footer-color:#000000;
+$body-color:#FEFEFE;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  &-brand {
+  }
+  &-nav {
+  }
+}
+
+#footer {
+  
+  &-navbar-nav {
+    &-item {
+    }
+
+    &-item a {
+    }
+  }
+}
