@@ -1,17 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
 /*==============variables===========*/
 $footer-color:#000000;
 $body-color:#FEFEFE;
 
+@mixin fontSetting($size, $color){
+  font-family:'Roboto', san-serif;
+  font-size:$size;
+  color:$color;
+}
+@mixin layoutSetting($direction){
+  display:flex;
+  flex-direction:$direction;
+  @if $direction == row or $direction == rowreverse{
+    column-gap:10px;
+  }@else if $direction == column or $direction == column-reverse{
+    row-gap:20px;
+  }
+}
 html,
 body {
   margin: 0;
   padding: 0;
 }
 
-#navbar {
+.navbar {
+  width: 100%;
+  height: 50px;
+  z-index:10;
+  position:fixed;
+  @include layoutSetting(row);
+  justify-content: space-around;
   &-brand {
+    width: 50%;
+    display:flex;
+    align-items: flex-start;
+    a{
+      text-decoration: none;
+      @include fontSetting(2rem,$body-color);
+      font-weight: bolder;
+    }
   }
   &-nav {
+    @include layoutSetting(row);
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width:799px){
+      @include layoutSetting(column);
+    }
+    &-item{
+      a{
+        text-decoration:none;
+        @include fontSetting(14px,$body-color);
+      }
+    }
+  }
+  #navbar-responsive-btn{
+    @media screen and(min-width:800px) {
+     display:none; 
+    }
+    @media screen and (max-width:799px) {
+      display: inline;
+    }
+  }
+}
+.main-content{
+  margin-top:2rem;
+  width: 100%;
+  &-block{
+    width:100%;
+  }
+}
+#introduction{
+  height: 75vh;
+  background-image: url(images/desktop/image-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:relative;
+  p{
+    width: 30%;
+    position:absolute;
+    border:5px solid $body-color;
+    padding:10px;
+    @media screen and(min-width:800px){
+      top:3em;
+      left:3em;
+    }
+    @media screen and (max-width:799px){
+
+    }
+    text-transform:uppercase;
+    color:$body-color;
+    @include fontSetting(50px,$body-color);
   }
 }
 
