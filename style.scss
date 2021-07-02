@@ -30,6 +30,9 @@ body {
   z-index: 10;
   position: fixed;
   @include layoutSetting(row);
+  @media screen and (min-width:800px){
+    padding-top:50px;
+  }
   justify-content: space-around;
   &-brand {
     width: 50%;
@@ -43,6 +46,7 @@ body {
   }
   &-nav {
     @include layoutSetting(row);
+    column-gap:20px;
     justify-content: center;
     align-items: center;
     @media screen and (max-width: 799px) {
@@ -52,6 +56,13 @@ body {
       a {
         text-decoration: none;
         @include fontSetting(14px, $body-color);
+        font-weight: bolder;
+      }
+      &:hover{
+        border-bottom:2px solid $body-color;
+        a{
+          color:$footer-color;
+        }
       }
     }
   }
@@ -90,10 +101,10 @@ body {
   background-size: cover;
   position: relative;
   p {
-    width: 30%;
+    width: 40%;
     position: absolute;
-    border: 5px solid $body-color;
-    padding: 10px;
+    border: 3px solid $body-color;
+    padding: 20px 20px 20px 30px;
     @media screen and(min-width:800px) {
       top: 3em;
       left: 3em;
@@ -153,6 +164,7 @@ body {
     }
   }
 }
+
 #creation {
   @include layoutSetting(column);
   &-header {
@@ -174,19 +186,26 @@ body {
   background-color: $footer-color;
   @include layoutSetting(row);
   justify-content: space-between;
+
   @media screen and (min-width:800px){
-    padding:30px;
+    padding-top:30px;
+    justify-content: space-around;
   }
   @media screen and (max-width:799px){
     @include layoutSetting(column);
   }
   &-item {
     @include layoutSetting(column);
-    
+    row-gap:10px;
     *{
       color:$body-color;
     }
     &-brand {
+      @media screen and (max-width:799px){
+        display:flex;
+        justify-content:center;
+        width: 100%;
+      }
       a {
         @include fontSetting(25px, $body-color);
         font-weight: bolder;
@@ -196,18 +215,35 @@ body {
     &-navbar {
       @media screen and (max-width:799px){
         @include layoutSetting(column);
+        justify-content:center;
+        align-items: center;
+        width: 100%;
       }
       @include layoutSetting(row);
       &-nav {
         a {
+          @include fontSetting(12px, $body-color);
           text-decoration: none;
-          color: $body-color;
         }
       }
     }
     &-social{
       @include layoutSetting(row);
       justify-content: flex-end;
+      @media screen and (max-width:799px){
+        justify-content: center;
+        font-weight: bolder;
+        align-items: center;
+      }
+      align-items: center;
+    }
+    &-copyrights{
+      @include fontSetting(12px,$body-color);
+      @media screen and (max-width:799px){
+        width: 100%;
+        display:flex;
+        justify-content:center;
+      }
     }
   }
 }
