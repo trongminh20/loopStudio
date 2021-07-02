@@ -1,22 +1,21 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 
 /*==============variables===========*/
-$footer-color:#000000;
-$body-color:#FEFEFE;
+$footer-color: #000000;
+$body-color: #fefefe;
 
-@mixin fontSetting($size, $color){
-  font-family:'Roboto', san-serif;
-  font-size:$size;
-  color:$color;
+@mixin fontSetting($size, $color) {
+  font-family: "Roboto", san-serif;
+  font-size: $size;
+  color: $color;
 }
-@mixin layoutSetting($direction){
-  display:flex;
-  flex-direction:$direction;
-  @if $direction == row or $direction == rowreverse{
-    column-gap:10px;
-  }@else if $direction == column or $direction == column-reverse{
-    row-gap:20px;
+@mixin layoutSetting($direction) {
+  display: flex;
+  flex-direction: $direction;
+  @if $direction == row or $direction == rowreverse {
+    column-gap: 10px;
+  } @else if $direction == column or $direction == column-reverse {
+    row-gap: 20px;
   }
 }
 html,
@@ -28,17 +27,17 @@ body {
 .navbar {
   width: 100%;
   height: 50px;
-  z-index:10;
-  position:fixed;
+  z-index: 10;
+  position: fixed;
   @include layoutSetting(row);
   justify-content: space-around;
   &-brand {
     width: 50%;
-    display:flex;
+    display: flex;
     align-items: flex-start;
-    a{
+    a {
       text-decoration: none;
-      @include fontSetting(2rem,$body-color);
+      @include fontSetting(2rem, $body-color);
       font-weight: bolder;
     }
   }
@@ -46,63 +45,169 @@ body {
     @include layoutSetting(row);
     justify-content: center;
     align-items: center;
-    @media screen and (max-width:799px){
+    @media screen and (max-width: 799px) {
       @include layoutSetting(column);
     }
-    &-item{
-      a{
-        text-decoration:none;
-        @include fontSetting(14px,$body-color);
+    &-item {
+      a {
+        text-decoration: none;
+        @include fontSetting(14px, $body-color);
       }
     }
   }
-  #navbar-responsive-btn{
+  #navbar-responsive-btn {
     @media screen and(min-width:800px) {
-     display:none; 
+      display: none;
     }
-    @media screen and (max-width:799px) {
+    @media screen and (max-width: 799px) {
       display: inline;
     }
   }
 }
-.main-content{
-  margin-top:2rem;
+.main-content {
   width: 100%;
-  &-block{
-    width:100%;
+  margin-bottom:5rem;
+  @media screen and (max-width: 799px) {
+    @include layoutSetting(column);
+    justify-content: center;
+  }
+  &-block:not(#introduction) {
+    margin: 100px auto auto;
+
+    @media screen and (min-width: 800px) {
+      width: 70%;
+    }
+
+    @media screen and (max-width: 799px) {
+      width: 100%;
+    }
   }
 }
-#introduction{
+#introduction {
   height: 75vh;
   background-image: url(images/desktop/image-hero.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  position:relative;
-  p{
+  position: relative;
+  p {
     width: 30%;
-    position:absolute;
-    border:5px solid $body-color;
-    padding:10px;
-    @media screen and(min-width:800px){
-      top:3em;
-      left:3em;
+    position: absolute;
+    border: 5px solid $body-color;
+    padding: 10px;
+    @media screen and(min-width:800px) {
+      top: 3em;
+      left: 3em;
     }
-    @media screen and (max-width:799px){
-
+    @media screen and (max-width: 799px) {
     }
-    text-transform:uppercase;
-    color:$body-color;
-    @include fontSetting(50px,$body-color);
+    text-transform: uppercase;
+    color: $body-color;
+    @include fontSetting(50px, $body-color);
   }
 }
 
-#footer {
-  
-  &-navbar-nav {
-    &-item {
+#interactive {
+  @include layoutSetting(row);
+  @media screen and (max-width: 799px) {
+    @include layoutSetting(column);
+  }
+  @media screen and (min-width: 800px) {
+    position: relative;
+    height: 50vh;
+  }
+  &-img {
+    width: 50%;
+    @media screen and (max-width: 799px) {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  &-content {
+    background-color: $body-color;
+    @include layoutSetting(column);
+    row-gap: 5px;
+    @media screen and(min-width:800px) {
+      position: absolute;
+      left: 40%;
+      top: 30%;
+      width: 50%;
+      padding-top: 20px;
+      padding-left: 50px;
+    }
+    @media screen and (max-width: 799px) {
+      width: 100%;
+      @include layoutSetting(column);
+      align-items: center;
+      justify-content: center;
     }
 
-    &-item a {
+    h1 {
+      @include fontSetting(40px, $footer-color);
+      font-weight: lighter;
+      text-transform: uppercase;
+    }
+    p {
+      @include fontSetting(11px, $footer-color);
+    }
+  }
+}
+#creation {
+  @include layoutSetting(column);
+  &-header {
+    @include layoutSetting(row);
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    button {
+      width: 15%;
+      height: 20px;
+      border: 1px solid $footer-color;
+      background: none;
+    }
+  }
+}
+
+.footer {
+  background-color: $footer-color;
+  @include layoutSetting(row);
+  justify-content: space-between;
+  @media screen and (min-width:800px){
+    padding:30px;
+  }
+  @media screen and (max-width:799px){
+    @include layoutSetting(column);
+  }
+  &-item {
+    @include layoutSetting(column);
+    
+    *{
+      color:$body-color;
+    }
+    &-brand {
+      a {
+        @include fontSetting(25px, $body-color);
+        font-weight: bolder;
+        text-decoration: none;
+      }
+    }
+    &-navbar {
+      @media screen and (max-width:799px){
+        @include layoutSetting(column);
+      }
+      @include layoutSetting(row);
+      &-nav {
+        a {
+          text-decoration: none;
+          color: $body-color;
+        }
+      }
+    }
+    &-social{
+      @include layoutSetting(row);
+      justify-content: flex-end;
     }
   }
 }
