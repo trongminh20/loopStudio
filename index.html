@@ -22,6 +22,16 @@
     window.onload= function(){
       setBackground();
     }
+    window.onresize = function(){
+      
+      if(document.innerWidth >=800){
+        location.reload();
+        document.getElementById("navbar-responsive-btn").style.display = "none";
+      }else if(document.innerWidth < 800){
+        
+        document.getElementById('navbar-responsive-btn').style.display = "flex";
+      }
+    }
   </script>
 </head>
 <body>
@@ -29,14 +39,14 @@
     <div class="navbar-brand">
       <a href="">loopStudios</a>
     </div>
-    <div class="navbar-nav">
+    <div class="navbar-nav" id="navbar-nav">
       <div class="navbar-nav-item"><a href="">About</a></div>
       <div class="navbar-nav-item"><a href="">Careers</a></div>
       <div class="navbar-nav-item"><a href="">Events</a></div>
       <div class="navbar-nav-item"><a href="">Products</a></div>
       <div class="navbar-nav-item"><a href="">Support</a></div>
     </div>
-    <div id="navbar-responsive-btn">
+    <div id="navbar-responsive-btn" onclick="ddMenu(document.getElementById('navbar-nav'));">
       <i class="fas fa-bars"></i>
     </div>
   </nav>

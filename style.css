@@ -10,15 +10,16 @@ body {
   width: 100%;
   height: 50px;
   z-index: 10;
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: row;
   column-gap: 10px;
   justify-content: space-around;
 }
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 799px) {
   .navbar {
-    padding-top: 50px;
+    background-color: #000000;
+    position: relative;
   }
 }
 .navbar-brand {
@@ -46,6 +47,12 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    display: none;
+    background-color: #000000;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 90vh;
   }
 }
 .navbar-nav-item a {
@@ -61,6 +68,11 @@ body {
 .navbar-nav-item:hover a {
   color: #000000;
 }
+@media screen and (max-width: 799px) {
+  .navbar-nav-item:hover a {
+    color: #fefefe;
+  }
+}
 @media screen and (min-width: 800px) {
   .navbar #navbar-responsive-btn {
     display: none;
@@ -68,7 +80,10 @@ body {
 }
 @media screen and (max-width: 799px) {
   .navbar #navbar-responsive-btn {
-    display: inline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fefefe;
   }
 }
 
@@ -198,11 +213,15 @@ body {
   color: #000000;
   font-weight: lighter;
   text-transform: uppercase;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 #interactive-content p {
   font-family: "Roboto", san-serif;
   font-size: 11px;
   color: #000000;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 #creation {
@@ -274,9 +293,10 @@ body {
   }
   #creation-rows #row-1 div,
 #creation-rows #row-2 div {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
+    margin: auto;
   }
 }
 
@@ -295,6 +315,7 @@ body {
 }
 @media screen and (max-width: 799px) {
   .footer {
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
