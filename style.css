@@ -66,7 +66,8 @@ body {
   border-bottom: 2px solid #fefefe;
 }
 .navbar-nav-item:hover a {
-  color: #000000;
+  color: #fefefe;
+  text-shadow: 2px 2px 4px #fefefe;
 }
 @media screen and (max-width: 799px) {
   .navbar-nav-item:hover a {
@@ -236,6 +237,14 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+@media screen and (max-width: 799px) {
+  #creation-header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+  }
 }
 #creation-header h1 {
   font-family: "Roboto", san-serif;

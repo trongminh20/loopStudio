@@ -23,12 +23,11 @@
       setBackground();
     }
     window.onresize = function(){
-      
+      location.reload();
       if(document.innerWidth >=800){
-        location.reload();
+        
         document.getElementById("navbar-responsive-btn").style.display = "none";
       }else if(document.innerWidth < 800){
-        
         document.getElementById('navbar-responsive-btn').style.display = "flex";
       }
     }

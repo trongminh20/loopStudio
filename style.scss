@@ -68,7 +68,8 @@ body {
       &:hover {
         border-bottom: 2px solid $body-color;
         a {
-          color: $footer-color;
+          color: $body-color;
+          text-shadow: 2px 2px 4px $body-color;
           @media screen and (max-width:799px){
             color:$body-color;
           }
@@ -192,6 +193,10 @@ body {
 #creation {
   @include layoutSetting(column);
   &-header {
+    @media screen and (max-width:799px){
+      @include layoutSetting(column);
+      justify-content: center;
+    }
     @include layoutSetting(row);
     align-items: center;
     justify-content: space-between;
@@ -201,6 +206,7 @@ body {
       font-weight: lighter;
       text-transform: uppercase;
     }
+
     #see-all-btn {
       width: 15%;
       height: 20px;
@@ -210,6 +216,7 @@ body {
         background-color:$footer-color;
         color: $body-color;
       }
+     
     }
   }
   &-rows {
