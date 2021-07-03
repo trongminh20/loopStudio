@@ -282,6 +282,10 @@ body {
   height: 100%;
   position: relative;
 }
+#creation-rows #row-1 div:hover,
+#creation-rows #row-2 div:hover {
+  opacity: 0.5;
+}
 #creation-rows #row-1 div h1,
 #creation-rows #row-2 div h1 {
   font-family: "Roboto", san-serif;

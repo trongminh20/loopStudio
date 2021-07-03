@@ -25,10 +25,12 @@
     window.onresize = function(){
       if(document.innerWidth >=800){
         location.reload();
-
         document.getElementById("navbar-responsive-btn").style.display = "none";
+        setBackground();
       }else if(document.innerWidth < 800){
+        location.reload();
         document.getElementById('navbar-responsive-btn').style.display = "flex";
+        setBackground();
       }
     }
   </script>
