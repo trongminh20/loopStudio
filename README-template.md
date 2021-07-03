@@ -98,7 +98,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [https://www.Sminhnphan.ca](https://www.your-site.com)
+- Website - [https://www.minhnphan.ca](https://www.your-site.com)
 - Frontend Mentor - [@trongminh20](https://www.frontendmentor.io/profile/trongminh20)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
