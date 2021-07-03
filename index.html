@@ -18,9 +18,14 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <script type="text/javascript">
+    window.onload= function(){
+      setBackground();
+    }
+  </script>
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="navbar-brand">
       <a href="">loopStudios</a>
     </div>
@@ -50,30 +55,46 @@
       projects for some of the best companies around the globe. Our award-winning 
       creations have transformed businesses through digital experiences that bind 
       to their brand.
-      </p>
-
-      
+      </p>      
     </div>
-   
   </div>
   <div class="main-content-block" id="creation">
     <div id="creation-header">
-      <h3>Our creations</h3>
-      <button class="btn">See all</button>
+      <h1>Our creations</h1>
+      <button class="btn" id="see-all-btn">See all</button>
     </div>
     <div id="creation-rows">
-      <div id="row-1">
-        Deep earth
-  Night arcade
-  Soccer team VR
-  The grid
+      <div id="row-1" id="images">
+        <div class="creation" id="image-deep-earth">
+          <h1>Deep Earth</h1>
+        </div>
+        <div class="creation" id="image-night-arcade">
+          <h1>
+            Night arcade
+          </h1>
+        </div>
+        <div class="creation" id="image-soccer-team">
+          <h1>Soccer team VR</h1>
+        </div >
+        <div class="creation" id="image-grid">
+          <h1>The grid</h1>
+        </div>
+        <!-- end row 1 -->
       </div>
       <div id="row-2">
-        
-  From up above VR
-  Pocket borealis
-  The curiosity
-  Make it fisheye
+        <div class="creation" id="image-from-above">
+          <h1>From up above VR</h1>
+        </div>
+        <div class="creation" id="image-pocket-borealis">
+          <h1>Pocket borealis</h1>
+        </div>
+        <div class="creation" id="image-curiosity">
+          <h1>the curiosity</h1>
+        </div>
+        <div class="creation" id="image-fisheye">
+          <h1>Make it fisheye</h1>
+        </div>
+        <!-- end row 2 -->
       </div>
       <!-- end creation rows -->
     </div>

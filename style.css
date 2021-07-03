@@ -105,6 +105,14 @@ body {
   background-size: cover;
   position: relative;
 }
+@media screen and (max-width: 799px) {
+  #introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+}
 #introduction p {
   width: 40%;
   position: absolute;
@@ -122,6 +130,12 @@ body {
     left: 3em;
   }
 }
+@media screen and (max-width: 799px) {
+  #introduction p {
+    width: 80%;
+  }
+}
+
 #interactive {
   display: flex;
   flex-direction: row;
@@ -201,15 +215,69 @@ body {
   flex-direction: row;
   column-gap: 10px;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
   width: 100%;
 }
-#creation-header button {
+#creation-header h1 {
+  font-family: "Roboto", san-serif;
+  font-size: 30px;
+  color: #000000;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+#creation-header #see-all-btn {
   width: 15%;
   height: 20px;
   border: 1px solid #000000;
   background: none;
+}
+#creation-header #see-all-btn:hover {
+  background-color: #000000;
+  color: #fefefe;
+}
+#creation-rows {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  height: 100vh;
+}
+#creation-rows #row-1,
+#creation-rows #row-2 {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  height: 50%;
+}
+#creation-rows #row-1 div,
+#creation-rows #row-2 div {
+  width: 25%;
+  height: 100%;
+  position: relative;
+}
+#creation-rows #row-1 div h1,
+#creation-rows #row-2 div h1 {
+  font-family: "Roboto", san-serif;
+  font-size: 15px;
+  color: #fefefe;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 799px) {
+  #creation-rows #row-1,
+#creation-rows #row-2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  #creation-rows #row-1 div,
+#creation-rows #row-2 div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .footer {
